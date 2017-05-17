@@ -19,7 +19,7 @@ test("Should return null if node is not in graph", () => {
   graph.addNode(1);
   graph.addNode(2);
 
-  const response = detectCycle(graph, graph.nodes[3]);
+  const response = detectCycle(graph);
 
   expect(response).toBeNull();
 });
@@ -36,14 +36,35 @@ test("Should return cycle if found", () => {
 
   // Edges
   graph.addEdge(1, 2);
-  graph.addEdge(2, 3);
   graph.addEdge(3, 4);
   graph.addEdge(4, 5);
   graph.addEdge(5, 3);
 
-  const response = detectCycle(graph, graph.nodes[3]);
+  const response = detectCycle(graph);
 
-  expect(response).toEqual([graph.nodes[3], graph.nodes[4], graph.nodes[5]]);
+  expect(response[0]).toEqual([graph.nodes[3], graph.nodes[4], graph.nodes[5]]);
+});
+
+test("Should return multiple cycles if found", () => {
+  const graph = new Graph();
+
+  // Nodes
+  graph.addNode(1);
+  graph.addNode(2);
+
+  graph.addNode(4);
+  graph.addNode(5);
+
+  // Edges
+  graph.addEdge(1, 2);
+  graph.addEdge(2, 1);
+  graph.addEdge(4, 5);
+  graph.addEdge(5, 4);
+
+  const response = detectCycle(graph);
+
+  expect(response[0]).toEqual([graph.nodes[1], graph.nodes[2]]);
+  expect(response[1]).toEqual([graph.nodes[4], graph.nodes[5]]);
 });
 
 test("Should return cycle null if no cycle is found", () => {
@@ -68,7 +89,6 @@ test("Should return cycle null if no cycle is found", () => {
   expect(response).toBeNull();
 });
 
-
 test("Should cycle if a cycle", () => {
   // There will be a cycle in this graph, and therefor it will not be a valid DAG
 
@@ -84,7 +104,7 @@ test("Should cycle if a cycle", () => {
   graph.addEdge(4, 5);
   graph.addEdge(5, 3);
 
-  const response = detectCycle(graph, graph.nodes[3]);
+  const response = detectCycle(graph);
 
-  expect(response).toEqual([graph.nodes[3], graph.nodes[4], graph.nodes[5]]);
+  expect(response[0]).toEqual([graph.nodes[3], graph.nodes[4], graph.nodes[5]]);
 });

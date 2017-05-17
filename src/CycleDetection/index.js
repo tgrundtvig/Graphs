@@ -42,4 +42,34 @@ const findCycle = (graph, startNode) => {
   return null;
 };
 
-export default findCycle;
+export default graph => {
+  if (!graph) {
+    return null;
+  }
+
+  const nodes = Object.values(graph.nodes);
+
+  const cycles = [];
+
+  let allCycleNodes = [];
+
+  for (let i = 0; i < nodes.length; i++) {
+    const node = nodes[i];
+
+    if (allCycleNodes.includes(node)) {
+      continue;
+    }
+
+    const cycle = findCycle(graph, node);
+    if (cycle !== null) {
+      cycles.push(cycle);
+      allCycleNodes = allCycleNodes.concat(cycle);
+    }
+  }
+
+  if (cycles.length === 0) {
+    return null;
+  }
+
+  return cycles;
+};
