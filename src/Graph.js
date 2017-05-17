@@ -24,7 +24,6 @@ export default class Graph {
   nodes = {};
   connections = [];
 
-
   addNode(nodeId) {
     const node = new Node(nodeId);
     this.nodes[nodeId] = node;
