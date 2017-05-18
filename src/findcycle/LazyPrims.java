@@ -3,15 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package graphs;
+package findcycle;
+
+import findcycle.Graph.Edge;
+import java.util.Queue;
 
 /**
  *
- * @author Tobias
+ * @author yoyo
  */
-public interface GraphBuilder
-{
-    public BuildNode createNode(String name);
-    public void createEdge(BuildNode begin, BuildNode end);
-    public Graph build();
+public class LazyPrims {
+
+    private Queue<Edge> mst;
+    private boolean[] marked;
+
+
 }
