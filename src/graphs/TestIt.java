@@ -6,7 +6,6 @@
 package graphs;
 
 import graphs.algorithms.BreadthFirst;
-import graphs.simpleimpl.GraphBuilderImpl;
 
 /**
  *
@@ -16,7 +15,7 @@ public class TestIt
 {
     public static void main(String[] args)
     {
-        GraphBuilder gb = new GraphBuilderImpl();
+        //GraphBuilder gb = new GraphBuilder();
         
         BuildNode a = gb.createNode("A");
         BuildNode b = gb.createNode("B");
