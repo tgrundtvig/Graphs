@@ -1,0 +1,6 @@
+c:\users\christoffer\documents\visual studio 2015\Projects\Graphs\Graphs\bin\Debug\Graphs.exe.config
+c:\users\christoffer\documents\visual studio 2015\Projects\Graphs\Graphs\bin\Debug\Graphs.exe
+c:\users\christoffer\documents\visual studio 2015\Projects\Graphs\Graphs\bin\Debug\Graphs.pdb
+c:\users\christoffer\documents\visual studio 2015\Projects\Graphs\Graphs\obj\Debug\Graphs.csprojResolveAssemblyReference.cache
+c:\users\christoffer\documents\visual studio 2015\Projects\Graphs\Graphs\obj\Debug\Graphs.exe
+c:\users\christoffer\documents\visual studio 2015\Projects\Graphs\Graphs\obj\Debug\Graphs.pdb
