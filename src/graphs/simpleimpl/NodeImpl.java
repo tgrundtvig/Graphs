@@ -38,9 +38,9 @@ public class NodeImpl implements Node, BuildNode
         return edges;
     }
     
-    public void addEdgeTo(Node end)
+    public void addEdgeTo(Node end, int weight)
     {
-        edges.add(new EdgeImpl(this, end));
+        edges.add(new EdgeImpl(this, end, weight));
     }
     
 }
