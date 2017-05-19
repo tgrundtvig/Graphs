@@ -14,6 +14,7 @@ import graphs.Node;
  */
 public class EdgeImpl implements Edge
 {
+    private int weight;
     private final Node begin;
     private final Node end;
 
@@ -23,6 +24,12 @@ public class EdgeImpl implements Edge
         this.end = end;
     }
     
+     public EdgeImpl(Node begin, Node end, int weight)
+    {
+        this.begin = begin;
+        this.end = end;
+        this.weight = weight;
+    }
     
     @Override
     public Node getBeginNode()
@@ -34,6 +41,14 @@ public class EdgeImpl implements Edge
     public Node getEndNode()
     {
         return end;
+    }
+    
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+    @Override
+    public int getWeight() {
+        return weight;
     }
     
 }

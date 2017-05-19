@@ -6,6 +6,7 @@
 package graphs;
 
 import graphs.algorithms.BreadthFirst;
+import graphs.algorithms.MinSpanningTree;
 import graphs.simpleimpl.GraphBuilderImpl;
 
 /**
@@ -21,25 +22,27 @@ public class TestIt
         BuildNode a = gb.createNode("A");
         BuildNode b = gb.createNode("B");
         BuildNode c = gb.createNode("C");
-        BuildNode d = gb.createNode("D");
         BuildNode e = gb.createNode("E");
         
-        gb.createEdge(a, b);
-        gb.createEdge(b, a);
-        gb.createEdge(a, d);
-        gb.createEdge(d, a);
-        gb.createEdge(b, c);
-        gb.createEdge(c, d);
-        gb.createEdge(c, c);
-        gb.createEdge(c, e);
-        gb.createEdge(e, d);
+        gb.createEdge(a, c, 10);
+        gb.createEdge(b, e, 15);
+        gb.createEdge(e, a,3);
+        gb.createEdge(b, a,2);
+       
+       
+        Graph g = gb.build(); 
+       
+        //int resMST = new MinSpanningTree().findMinimumSpanningTree(g.findNode("C"));
         
-        Graph g = gb.build();
-        Iterable<Node> res = BreadthFirst.runBreadthFirst(g.findNode("A"));
+       Iterable<Node> res = CycleDetection.hasCycle(g);
+
+        // Iterable<Node> res = BreadthFirst.runBreadthFirst(g.findNode("A"));
         
         for(Node n : res)
         {
             System.out.println(n.getName());
         }
+        
+        //System.out.println("Result: " + resMST);
     }
 }
