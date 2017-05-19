@@ -1,0 +1,39 @@
+Grafuri :)
+
+Grafurile sunt fomate din EDGES (legaturi) si VERTICES (noduri). Noduri si legaturi.
+
+Breadth first search (BFS)
+
+Definitie: se incepe de la un vertex S cu scopul de  ajunge la vertexus V pe cea mai
+scurta cale. Algoritmul se uita la cele mai apropiate vertexuri utilizand un singur EDGE.
+De acolo se utilizeaza 2 edges s.a.m.d.
+
+In contrast, BFS is based on this goal. To find a shortest path from s to v, we start
+at s and check for v among all the vertices that we can reach by following one edge,
+then we check for v among all the vertices that we can reach from s by following two
+edges, and so forth.
+
+BFS se poate asemana cu un grup de pameni care cauta drumul in toate disrectiile. Cand
+sunt mia multe drumuri de explorat ne imaginam ca ei se despart si merg pe drumuri diferite.
+Cand se intalnesc doua grupuri, se pastreaza drumul drumul cel mai scurt parcurs de
+una din echipe.
+
+Cand programezi, si cand avem de traversat un graf unde avem mai mult de un EGDE de traversat
+, alegem unul si pe celelalte le salvam ca sa fie explorate mai tarziu.
+
+In BFS vrem sa exploram VERICES in ordinea distantei de la sursa.
+Pentru aceasta, utilizam o (First in first out) QUE.
+
+Paranteza:
+FIFO - primul venit, primul servit. [1,2,3,4,5] se consuma in ordinea [1,2,3,4,5]
+LIFO - ultimul venit, primul servit. [1,2,3,4,5] se consuma in ordinea [5,4,3,2,1]
+
+Cum se implementeaza?
+
+Se pastreaza o QUE cu toate VERTICES (nodurile) care au fost marcate dar listele lor
+de adiacenta (next to) nu au fost verificate.
+
+Se pune nodul (vertex) sursa in sir,
+
+- ia urmatorul vertex si marcheaza-l
+- pune in sir toate vertexurile nemarcate care sunt adiacente cu nodul tinta V.
