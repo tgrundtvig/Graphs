@@ -13,6 +13,4 @@ public interface Edge
 {
     public Node getBeginNode();
     public Node getEndNode();
-
-    public boolean getWeight();
 }
