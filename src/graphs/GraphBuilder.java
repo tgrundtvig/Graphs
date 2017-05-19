@@ -12,6 +12,6 @@ package graphs;
 public interface GraphBuilder
 {
     public BuildNode createNode(String name);
-    public void createEdge(BuildNode begin, BuildNode end);
+    public void createEdge(BuildNode begin, BuildNode end, int weight);
     public Graph build();
 }

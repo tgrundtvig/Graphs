@@ -16,11 +16,13 @@ public class EdgeImpl implements Edge
 {
     private final Node begin;
     private final Node end;
+    private int weight;
 
-    public EdgeImpl(Node begin, Node end)
+    public EdgeImpl(Node begin, Node end, int weight)
     {
         this.begin = begin;
         this.end = end;
+        this.weight = weight;
     }
     
     
@@ -34,6 +36,15 @@ public class EdgeImpl implements Edge
     public Node getEndNode()
     {
         return end;
+    }
+
+    @Override
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
     
 }

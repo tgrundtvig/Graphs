@@ -6,6 +6,7 @@
 package graphs;
 
 import graphs.algorithms.BreadthFirst;
+import graphs.algorithms.CircleDetection;
 import graphs.simpleimpl.GraphBuilderImpl;
 
 /**
@@ -23,19 +24,22 @@ public class TestIt
         BuildNode c = gb.createNode("C");
         BuildNode d = gb.createNode("D");
         BuildNode e = gb.createNode("E");
+        BuildNode f = gb.createNode("F");
         
-        gb.createEdge(a, b);
-        gb.createEdge(b, a);
-        gb.createEdge(a, d);
-        gb.createEdge(d, a);
-        gb.createEdge(b, c);
-        gb.createEdge(c, d);
-        gb.createEdge(c, c);
-        gb.createEdge(c, e);
-        gb.createEdge(e, d);
+        gb.createEdge(a, c, 5);
+        gb.createEdge(c, f, 10);
+        gb.createEdge(f, d, 2);
+        gb.createEdge(d, c, 3);
+        //gb.createEdge(c, a, 5); // Only for min span tree
+        //gb.createEdge(f, c, 10); // Only for min span tree
+        //gb.createEdge(d, f, 2); // Only for min span tree
+        //gb.createEdge(c, d, 3); // Only for min span tree
         
         Graph g = gb.build();
-        Iterable<Node> res = BreadthFirst.runBreadthFirst(g.findNode("A"));
+        //Iterable<Node> res = BreadthFirst.runBreadthFirst(g.findNode("A")); // Opg 1
+        Iterable<Node> res = CircleDetection.hasCycle(g); // Opg 2
+        //int res = new MinSpanningTree().findMinimumSpanningTree(g.findNode("A")); // Opg 3
+        //System.out.println("Result: " + res);
         
         for(Node n : res)
         {
