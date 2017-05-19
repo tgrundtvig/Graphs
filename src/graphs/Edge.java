@@ -11,6 +11,7 @@ package graphs;
  */
 public interface Edge
 {
+    public int getWeight();
     public Node getBeginNode();
     public Node getEndNode();
 }

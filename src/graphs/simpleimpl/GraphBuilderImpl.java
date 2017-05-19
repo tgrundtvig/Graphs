@@ -36,13 +36,13 @@ public class GraphBuilderImpl implements GraphBuilder
     }
 
     @Override
-    public void createEdge(BuildNode begin, BuildNode end)
+    public void createEdge(BuildNode begin, BuildNode end, int weight)
     {
         if(begin instanceof NodeImpl && end instanceof NodeImpl)
         {
             NodeImpl beginImpl = (NodeImpl) begin;
             NodeImpl endImpl = (NodeImpl) end;
-            beginImpl.addEdgeTo(endImpl);
+            beginImpl.addEdgeTo(endImpl,weight);
         }
         else
         {
