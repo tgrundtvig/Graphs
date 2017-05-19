@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package graphs;
+package mst;
 
 /**
  *
- * @author Tobias
+ * @author Joachim
  */
-public interface Edge
-{
-    public Node getBeginNode();
-    public Node getEndNode();
-}
+public class subset {
+
+    int parent, rank;
+};
