@@ -9,8 +9,8 @@ package graphs;
  *
  * @author Tobias
  */
-public interface Graph
+public interface IGraph
 {
-    public Iterable<Node> getNodes();
-    public Node findNode(String name);
+    public Iterable<INode> getNodes();
+    public INode findNode(String name);
 }

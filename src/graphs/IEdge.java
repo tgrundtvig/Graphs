@@ -9,8 +9,8 @@ package graphs;
  *
  * @author Tobias
  */
-public interface Edge
+public interface IEdge
 {
-    public Node getBeginNode();
-    public Node getEndNode();
+    public INode getBeginNode();
+    public INode getEndNode();
 }

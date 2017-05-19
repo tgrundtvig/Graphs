@@ -9,8 +9,8 @@ package graphs;
  *
  * @author Tobias
  */
-public interface Node
+public interface INode
 {
     public String getName();
-    public Iterable<Edge> getFromEdges();
+    public Iterable<IEdge> getFromEdges();
 }
