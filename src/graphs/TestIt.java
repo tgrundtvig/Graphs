@@ -6,7 +6,10 @@
 package graphs;
 
 import graphs.algorithms.BreadthFirst;
+import graphs.algorithms.CycleDetection;
+import graphs.algorithms.DAGSorter;
 import graphs.simpleimpl.GraphBuilderImpl;
+import java.util.List;
 
 /**
  *
@@ -18,28 +21,35 @@ public class TestIt
     {
         GraphBuilder gb = new GraphBuilderImpl();
         
-        BuildNode a = gb.createNode("A");
-        BuildNode b = gb.createNode("B");
-        BuildNode c = gb.createNode("C");
-        BuildNode d = gb.createNode("D");
+        BuildNode b = gb.createNode("A");
+        BuildNode a = gb.createNode("B");
+        BuildNode d = gb.createNode("C");
+        BuildNode c = gb.createNode("D");
         BuildNode e = gb.createNode("E");
         
         gb.createEdge(a, b);
-        gb.createEdge(b, a);
-        gb.createEdge(a, d);
-        gb.createEdge(d, a);
         gb.createEdge(b, c);
-        gb.createEdge(c, d);
+        gb.createEdge(b, d);
         gb.createEdge(c, c);
-        gb.createEdge(c, e);
-        gb.createEdge(e, d);
+        gb.createEdge(c, a);
+        gb.createEdge(d, a);
+        gb.createEdge(e, a);
         
         Graph g = gb.build();
-        Iterable<Node> res = BreadthFirst.runBreadthFirst(g.findNode("A"));
+        Iterable<Node> res = BreadthFirst.runBreadthFirst(g.findNode("D"));
         
         for(Node n : res)
         {
             System.out.println(n.getName());
         }
+        CycleDetection cd = new CycleDetection();
+        List<List<Node>> calculatedCycles = cd.detectCycle(g);
+         for (int i = 0; i < calculatedCycles.size(); i++) {
+             for (int j = 0; j < calculatedCycles.get(i).size(); j++) {
+                 System.out.println(calculatedCycles.get(i).get(j).getName());
+             }
+             System.out.println("----------------");
+         }
+         
     }
 }
