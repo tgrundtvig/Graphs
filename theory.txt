@@ -37,3 +37,10 @@ Se pune nodul (vertex) sursa in sir,
 
 - ia urmatorul vertex si marcheaza-l
 - pune in sir toate vertexurile nemarcate care sunt adiacente cu nodul tinta V.
+
+
+.... mai citeste din carte ca te ajuta :).
+
+Inspiratie:
+MST : http://www.geeksforgeeks.org/greedy-algorithms-set-2-kruskals-minimum-spanning-tree-mst/
+DAG: http://www.geeksforgeeks.org/topological-sorting/
